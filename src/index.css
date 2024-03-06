@@ -1,13 +1,443 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+/* NAVBAR CSS________________________________________________ */
+#Navbar {
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 40px;
+    background: #212731;
+
+    .search {
+        background-color: white;
+        border-radius: 8px;
+
+        button {
+            border: none;
+            background: white;
+            font-size: larger;
+            margin: 0 6px;
+        }
+
+        input {
+            border: none;
+            height: 38px;
+            border-radius: 8px;
+
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+
+    .list {
+        display: flex;
+        align-items: center;
+        transition: all 0.3s ease-in-out;
+
+        ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+
+            li {
+                padding: 0 20px;
+                font-size: 14px;
+                color: #D1D6DA;
+                font-weight: 400;
+                cursor: pointer;
+                transition: all 0.3s ease-in-out;
+
+                &:hover {
+                    color: white;
+                }
+            }
+        }
+    }
+
+    .burger {
+        display: none;
+    }
+}
+
+.head {
+    .detailNav {
+        select {
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+}
+
+.content {
+    .allDetails {
+        .detail {
+            select {
+                &:focus {
+                    outline: none;
+                }
+            }
+        }
+    }
+}
+
+.footer {
+    .mt-5 {
+        select {
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    #Navbar {
+        .list {
+            ul {
+                display: flex;
+                flex-direction: column;
+                list-style: none;
+                margin: 0;
+
+                li {
+                    padding-bottom: 15px;
+                }
+            }
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: fixed;
+            top: 68px;
+            right: -180px;
+            background: aliceblue;
+            width: 180px;
+            height: 100vh;
+        }
+
+        .list.active {
+            right: 0px;
+        }
+
+        .burger {
+            display: block;
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+    }
+}
+
+
+
+/* MAIN CSS________________________________________________ */
+
+.comtainer {
+    background-color: #fbfcfd;
+}
+
+.head {
+    .detailNav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 0;
+        font-size: 14px;
+        color: #4B5665;
+        font-weight: 400;
+
+        select {
+            border: none;
+        }
+    }
+
+    .btnList {
+        button {
+            border: none;
+            margin-right: 20px;
+            padding: 5px 45px 5px 20px;
+            border-radius: 12px;
+            color: #4B5665;
+            font-size: 13px;
+            font-weight: 400;
+            background-color: rgb(253, 253, 253);
+        }
+    }
+
+    .filesOpen {
+        display: flex;
+        align-items: center;
+        margin-top: 10px;
+        font-size: 14px;
+        font-weight: 400;
+        color: #5C6874;
+    }
+}
+
+.content {
+    position: relative;
+
+    .allDetails {
+        border-radius: 12px;
+        padding: 14px;
+        display: flex;
+        position: relative;
+        background: #f1efec47;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        .img {
+            width: 220px;
+            height: 220px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            img {
+                width: 150px;
+                height: 110px;
+            }
+        }
+
+        .detail {
+            p {
+                width: 490px;
+            }
+
+            h6 {
+                width: 490px;
+            }
+
+            select {
+                border: none;
+                color: #0d6efd;
+            }
+
+            .highlights {
+                width: 505px;
+                height: 105px;
+                border-radius: 12px;
+                background: #FFF4ED;
+                padding: 1px;
+
+                .num {
+                    background: white;
+                    padding: 1px 10px;
+                    color: #0d6efd;
+                    border-radius: 4px;
+                }
+            }
+
+            .weLike {
+                .check {
+                    background-color: #ebf5ff;
+                    color: #0d6efd;
+                    padding: 5px;
+                }
+            }
+        }
+
+        .ratingDetails {
+            width: 378px;
+
+            .viewBtn {
+                display: flex;
+                align-items: center;
+                flex-direction: column-reverse;
+                height: 100%;
+
+                button {
+                    width: 260px;
+                    height: 48px;
+                }
+            }
+        }
+
+        .rating {
+            height: 118px;
+            width: 135px;
+            position: absolute;
+            top: 0;
+            right: 130px;
+            text-align: center;
+            background: #F3F9FF;
+            border-radius: 0 0 12px 12px;
+
+            .stars {
+                color: #ffb80f;
+            }
+        }
+    }
+
+    .marking {
+        display: flex;
+        position: absolute;
+        align-items: center;
+        width: 136px;
+        height: 34px;
+        background: #FF7724;
+        color: white;
+        border-radius: 0 8px 8px 0;
+        z-index: 1;
+    }
+}
+
+.items {
+    .card {
+        .card-body {
+            span {
+                background-color: #ebf5ff;
+                color: #0d6efd;
+                padding: 5px;
+            }
+        }
+
+        border: none;
+        background: #f1efec47;
+    }
+
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.signUp {
+    display: flex;
+    justify-content: space-around;
+
+    .text {
+        width: 398px;
+        color: #5C6874;
+    }
+
+    .input {
+        input {
+            height: 46px;
+            font-size: large;
+            width: 348px;
+        }
+
+        button {
+            width: 97px;
+            height: 46px;
+            color: white;
+            border: none;
+            border-radius: 0px 12px 12px 0px;
+            background: #1B88F4;
+            font: 400;
+        }
+    }
+}
+
+
+/* FOOTER CSS________________________________________________ */
+
+.footer {
+    height: 452px;
+    background: #212731;
+    padding: 75px 40px;
+    color: #D1D6DA;
+    display: flex;
+    justify-content: space-around;
+
+    .mt-5 {
+        select {
+            border: none;
+            background: transparent;
+            color: #D1D6DA;
+        }
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .content {
+        .allDetails {
+            .ratingDetails {
+                .viewBtn {
+                    button {
+                        position: absolute;
+                        right: 0;
+                        width: 150px;
+                        height: 35px;
+                    }
+                }
+            }
+
+            .rating {
+                display: none;
+            }
+        }
+    }
+
+    .head {
+        .btnList {
+            button {
+                margin-right: 0;
+                padding: 5px 30px 5px 15px;
+            }
+        }
+    }
+
+    .signUp {
+        .input {
+            input {
+                height: 35px;
+                font-size: medium;
+                width: 200px;
+            }
+
+            button {
+                width: 75px;
+                height: 35px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 770px) {
+    .content {
+        .allDetails {
+            .detail {
+                .highlights {
+                    width: 220px;
+                }
+
+                p {
+                    width: 306px;
+                }
+            }
+        }
+    }
+
+    .head {
+        .btnList {
+            button {
+                margin-right: 0;
+                padding: 5px 10px 5px 10px;
+            }
+        }
+    }
+
+    .signUp {
+        .input {
+            input {
+                height: 35px;
+                font-size: small;
+                width: 100px;
+            }
+
+            button {
+                width: 50px;
+                height: 35px;
+            }
+        }
+    }
 }
